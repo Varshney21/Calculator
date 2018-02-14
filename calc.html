@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+	<head>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+	<style>
+	input{
+		height:40px;
+		width:168px;
+	}
+	
+	button{
+		height:40px;
+		width:40px;
+	}
+	</style>
+
+
+
+	</head>
+
+	<body>
+		<input type="text" name="calc" size="11" value=0 disabled></input>
+		<br>
+		<button name="1">1</button>
+		<button name="2">2</button>
+		<button name="3">3</button>
+		<button name="+">+</button>
+		<br>
+		<button name="4">4</button>
+		<button name="5">5</button>
+		<button name="6">6</button>
+		<button name="-">-</button>
+		<br>
+		<button name="7">7</button>
+		<button name="8">8</button>
+		<button name="9">9</button>
+		<button name="*">*</button>
+		<br>
+		<button name="clear">C</button>
+		<button name="0">0</button>
+		<button name="=">=</button>
+		<button name="/">/</button>
+
+		<script>
+			$(document).ready(function(){
+			var i=$("input[name='calc']").val();
+			//console.log(i);
+			var arg1,arg2,op;
+			$("button[name='1']").click(function() {
+				i=(i*10)+1;
+				$("input[name='calc']").val(i);
+			});
+			$("button[name='2']").click(function() {
+				i=(i*10)+2;
+				$("input[name='calc']").val(i); 
+			});
+			$("button[name='3']").click(function() {
+				i=(i*10)+3;
+				$("input[name='calc']").val(i);
+			});
+			$("button[name='4']").click(function() {
+				i=(i*10)+4;
+				$("input[name='calc']").val(i);
+			});
+			$("button[name='5']").click(function() {
+				i=(i*10)+5;
+				$("input[name='calc']").val(i);
+			});
+			$("button[name='6']").click(function() {
+				i=(i*10)+6;
+				$("input[name='calc']").val(i);
+			});
+			$("button[name='7']").click(function() {
+				i=(i*10)+7;
+				$("input[name='calc']").val(i);
+			});
+			$("button[name='8']").click(function() {
+				i=(i*10)+8;
+				$("input[name='calc']").val(i);
+			});
+			$("button[name='9']").click(function() {
+				i=(i*10)+9;
+				$("input[name='calc']").val(i);
+			});
+			$("button[name='0']").click(function() {
+				i=(i*10)+0;
+				$("input[name='calc']").val(i);
+			});
+			$("button[name='+']").click(function() {
+				op=1;
+				arg1=$("input[name='calc']").val();
+				//$("input[name='calc']").val(0);
+				i=0;
+			});
+			$("button[name='-']").click(function() {
+				op=2;
+				arg1=$("input[name='calc']").val();
+				//$("input[name='calc']").val(0);
+				i=0;
+			});
+			$("button[name='*']").click(function() {
+				op=3;
+				arg1=$("input[name='calc']").val();
+				//$("input[name='calc']").val(0);
+				i=0;
+			});
+			$("button[name='/']").click(function() {
+				op=4;
+				arg1=$("input[name='calc']").val();
+				//$("input[name='calc']").val(0);
+				i=0;
+			});
+			$("button[name='=']").click(function() {
+				arg2=$("input[name='calc']").val();
+				arg1 = Number(arg1);				
+				arg2 = Number(arg2);
+				if(op==1){
+					arg1=arg1+arg2;}
+				else if(op==2){
+					arg1=arg1-arg2;}					
+				else if(op==3){
+					arg1=arg1*arg2;}
+				else{
+					arg1=arg1/arg2;}	
+				$("input[name='calc']").val(arg1);
+				i=0;
+			});
+			$("button[name='clear']").click(function() {
+				$("input[name='calc']").val(0);
+				i=0;
+			});
+			});
+		</script>
+	</body>
+</html>
